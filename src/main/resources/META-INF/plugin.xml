@@ -1,15 +1,23 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.osber1.ollamaproxy</id>
-    <name>ollama-proxy</name>
+    <id>io.osber.ollama</id>
+    <name>Ollama Proxy</name>
     <vendor>osber1</vendor>
 
     <depends>com.intellij.modules.platform</depends>
 
-    <resource-bundle>messages.MyBundle</resource-bundle>
-
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.osber1.ollamaproxy.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-        <postStartupActivity implementation="com.github.osber1.ollamaproxy.startup.MyProjectActivity" />
+        <toolWindow id="Ollama Proxy"
+                    secondary="true"
+                    icon="AllIcons.General.Modified"
+                    anchor="right"
+                    factoryClass="io.osber1.ollama.ui.OllamaToolWindow"/>
+
+        <applicationService serviceImplementation="io.osber1.ollama.ui.OllamaSettingsState"/>
+        <applicationConfigurable parentId="tools" instance="io.osber1.ollama.ui.OllamaSettings"
+                                 id="io.osber1.ollama.ui.OllamaSettings"
+                                 displayName="Ollama Proxy Settings"/>
+        <notificationGroup id="Ollama Proxy"
+                           displayType="BALLOON"/>
     </extensions>
 </idea-plugin>
