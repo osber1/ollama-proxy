@@ -40,7 +40,7 @@ dependencies {
     implementation("io.ktor:ktor-server-content-negotiation:2.3.13")
     implementation("io.ktor:ktor-serialization-jackson:2.3.13")
     implementation("io.ktor:ktor-server-status-pages:2.3.13")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-swing:1.9.0")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.15.2")
     implementation("org.slf4j:slf4j-api:2.0.3")
